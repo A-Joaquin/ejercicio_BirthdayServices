@@ -3,7 +3,7 @@ export class GreetingDelivery
 {
     constructor(){}
 
-    sendMessage(employee,smtpUrl, smtpPort, transport)
+    sendGreetingToEmployee(employee,smtpUrl, smtpPort, transport)
     {
         const message = {
           host: smtpUrl,

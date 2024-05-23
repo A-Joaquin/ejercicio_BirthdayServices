@@ -10,7 +10,7 @@ export class BirthdayService {
     const employees= employeesRepository.getEmployeesByBirthday(ourDate,fileName);
     let greetingDelivery=new GreetingDelivery();
     employees.forEach(employee => {
-      greetingDelivery.sendMessage(employee,smtpUrl, smtpPort, transport);
+      greetingDelivery.sendGreetingToEmployee(employee,smtpUrl, smtpPort, transport);
     });
 
   }
