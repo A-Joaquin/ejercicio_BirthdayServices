@@ -1,15 +1,15 @@
 import fs from "fs";
 import path from "path";
 import { Employee } from "./Employee";
-
+import { EmployeesRepository } from "./employeesRepository";
 export class BirthdayService {
   constructor() {}
 
 
 
   sendGreetings(ourDate, fileName, smtpUrl, smtpPort, transport) {
-    let employees=this.getEmployeesByBirthday(ourDate,fileName)
-
+    let employeesRepository=new EmployeesRepository();
+    const employees= employeesRepository.getEmployeesByBirthday(ourDate,fileName);
     employees.forEach((employee) => {
       const message = {
         host: smtpUrl,
