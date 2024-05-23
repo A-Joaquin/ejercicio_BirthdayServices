@@ -1,6 +1,3 @@
-import fs from "fs";
-import path from "path";
-import { Employee } from "./Employee";
 import { EmployeesRepository } from "./employeesRepository";
 export class BirthdayService {
   constructor() {}
