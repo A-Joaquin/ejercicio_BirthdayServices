@@ -4,9 +4,13 @@ export class BirthdayService {
 
 
 
-  sendGreetings(ourDate, fileName, smtpUrl, smtpPort, transport) {
+  sendGreetings(ourDate, fileName,smtpUrl, smtpPort, transport) {
     let employeesRepository=new EmployeesRepository();
     const employees= employeesRepository.getEmployeesByBirthday(ourDate,fileName);
+    this.sendMessage(employees,smtpUrl, smtpPort, transport);
+  }
+  sendMessage(employees,smtpUrl, smtpPort, transport)
+  {
     employees.forEach((employee) => {
       const message = {
         host: smtpUrl,
@@ -20,4 +24,5 @@ export class BirthdayService {
     });
   }
 
+  
 }
