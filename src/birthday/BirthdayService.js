@@ -1,5 +1,3 @@
-import { EmployeesRepository } from "./employeesRepository";
-import { GreetingDelivery } from "./GreetingDelivery";
 export class BirthdayService {
   constructor(greetingDelivery,employeesRepository) {
     this.greetingDelivery=greetingDelivery;
